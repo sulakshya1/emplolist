@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Contact us";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 40px;
+        background-color: #f1f1f1;
+    }
+
+    .container {
+        padding: 10px; /* Add padding for equal spacing on both sides */
+    }
+
+    .maintxt {
+        color:#222222;
+        text-align: center;
+        padding: 20px;
+        margin-top:-30px;
+    }
+
+        .maintxt p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #66666c;
+        }
+
+    /* Contact Information styles */
+    .contact-info {
+        margin-top: 20px;
+        padding-top: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .contact-info .contact-item1,
+        .contact-info .contact-item2,
+        .contact-info .contact-item3 {
+            flex: 1;
+            padding: 0px;
+        }
+
+            .contact-info .contact-item1 strong,
+            .contact-info .contact-item2 strong,
+            .contact-info .contact-item3 strong {
+                display: inline-block;
+                width: 60px;
+                color: #333333;
+            }
+
+    /* Center the logo */
+    .logo-container {
+        text-align: center;
+    }
+
+    .centered-logo {
+        max-width: 20%;
+    }
+
+    /* Image styles */
+    img {
+        max-width: 100%;
+    }
+
+    /* Separate contact information and main text */
+    .separator {
+        margin: 40px auto;
+        border: none;
+        border-top: 1px solid #222222;
+        max-width: 50%;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="~/pictures/logo(main).png" class="centered-logo" />
+        </div>
+        <div class="maintxt">
+            <h1>Contact Us</h1>
+            <p>Thank you for your interest in contacting us. We value your feedback and are eager to assist you in any way we can. Please feel free to get in touch with us using the contact information provided below.</p>
+        </div>
+        <hr class="separator" />
+        <div class="contact-info">
+            <div class="contact-item1">
+                <strong>Email:</strong> info@example.com
+            </div>
+            <div class="contact-item2">
+                <strong>Phone:</strong> +977 (01) 123-456
+            </div>
+            <div class="contact-item3">
+                <strong>Address:</strong> CCMT, Kathmandu, Nepal
+            </div>
+        </div>
+    </div>
+</body>

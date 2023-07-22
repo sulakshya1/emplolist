@@ -1,0 +1,88 @@
+﻿@model emplolist.Models.LoginViewModel1
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2><img width="40" height="40" src="https://img.icons8.com/ios-filled/50/login-rounded-right.png" alt="login-rounded-right" /> Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-black" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div style="margin-left: 20%;">
+            <input type="submit" value="Login" class="button" />
+        </div>
+    </div>
+}
+
+<style>
+    .form-control {
+        width: 200px; /* Adjust the width as per your requirement */
+        padding: 8px 12px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .text-black {
+        color: black;
+    }
+    .button {
+        margin: 0 5px;
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 1.5;
+    }
+
+        .button:hover {
+            color: #17181a;
+            background-color: #e0e0e0;
+        }
+
+    /* Add this style to ensure the form controls occupy the full width */
+    .form-group {
+        display: flex;
+    }
+
+    .control-label {
+        flex: 0 0 20%;
+        padding-top: 7px;
+    }
+
+    .col-md-10 {
+        flex: 1;
+    }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

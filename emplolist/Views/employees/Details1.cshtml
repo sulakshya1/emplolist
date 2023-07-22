@@ -1,0 +1,87 @@
+﻿@model emplolist.Models.employee
+
+@{
+    ViewBag.Title = "Details";
+}
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<div>
+    <br/>
+    <h2 class="las la-user-tie">@Html.DisplayFor(model => model.first_name)'s profile</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+    </dl>
+</div>
+    <a href="@Url.Action("Index1", "employees")" class="button">Return</a>
+<style>
+    .button {
+        margin-left: 70px;
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+        .button:hover {
+            color: #17181a;
+            background-color: #e0e0e0;
+        }
+</style>

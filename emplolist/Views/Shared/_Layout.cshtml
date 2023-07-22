@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        @ViewBag.Title -Emplolist
+    </title>
+    <link rel="icon" fileExtension=".svg" Type="image/svg+xml" href="~/pictures/logo3.png" sizes="64x64" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+            .navbar-brand img {
+                text-align: center;
+                width: 40px;
+                height: auto;
+            }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">
+                    <img src="~/pictures/EMS_WhiteLogo.svg" />
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (Session["UserId"] == null)
+                    {
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav">
+                    @if (Session["UserId"] != null && Session["Username"].ToString() == "admin")
+                    {
+                        <li>@Html.ActionLink("Home", "Index2", "login")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Users", "Index", "employees")</li>
+                        <li>@Html.ActionLink("Registration", "Index", "users")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav">
+                    @if (Session["UserId"] != null && Session["Username"].ToString() != "admin")
+                    {
+                        <li>@Html.ActionLink("Home", "Index1", "login")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("peers", "Index1", "employees")</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Session["UserId"] != null && Session["Username"].ToString() == "admin")
+                    {
+                        <li>@Html.ActionLink(Session["username"].ToString(), "Index1", "Profile")</li>
+
+                    }
+                    else if (Session["UserId"] != null && Session["Username"].ToString() != "admin")
+                    {
+                        <li>@Html.ActionLink(Session["username"].ToString(), "Index", "Profile")</li>
+
+                    }
+                    else
+                    {
+                        @Html.Partial("_LoginPartial")
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

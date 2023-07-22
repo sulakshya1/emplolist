@@ -1,0 +1,103 @@
+﻿@model emplolist.Models.employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<h1>
+    &#9888;
+    Are you sure you want to delete this?
+</h1>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.first_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.first_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.middle_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.middle_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.last_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.last_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.post)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.post)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salary)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div style=" margin-left: 70px; ">
+            <input type="submit" value="Yes" class="button" />
+            <a href="@Url.Action("Index", "employees")" class="button">No</a>
+        </div>
+    }
+</div>
+<style>
+    .button {
+        margin: 0 5px; /* Add some horizontal margin between the buttons */
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100px; /* Set a fixed width for both buttons */
+        text-align: center; /* Center the button text */
+        text-decoration: none; /* Remove underline for link button */
+        display: inline-block; /* Ensure proper spacing between buttons */
+        line-height: 1.5; /* Adjust line-height for better appearance */
+    }
+
+        .button:hover {
+            color: #17181a;
+            background-color: #e0e0e0;
+        }
+</style>

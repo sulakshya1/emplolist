@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        background-image: url('../../pictures/logo(main).png');
+        background-size: 20%;
+        background-position:center -20%;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .construction-image {
+        left:45%;
+        width: 200px;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+
+    .message {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .details {
+        font-size: 16px;
+        color: #666;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .button:hover {
+            color: #17181a;
+            background-color: #e0e0e0;
+        }
+</style>
+<body>
+    <div class="container">
+        <div class="message">Emplolist</div>
+        <div class="details">Seamless Employee Management: Anytime, Anywhere with our Web-Based Solution - Emplolist!</div>
+        <br />
+        <a href="@Url.Action("Index", "Login")" class="button">Get Started</a>
+        <a href="@Url.Action("About", "Home")" class="button">About us</a>
+    </div>
+</body>

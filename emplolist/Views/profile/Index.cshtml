@@ -1,0 +1,34 @@
+﻿@model emplolist.Models.user
+
+@{
+    ViewBag.Title = "profile";
+}
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<br/>
+<h2 class="las la-user">Hello @Session["Username"]</h2>
+<hr/>
+<div class="row">
+    <div style="display:flex">
+        <a class="button" href="@Url.Action("Details2","employees", new { id=Convert.ToInt32(Session["UserId"])})">Details</a>
+        <a class="button" href="@Url.Action("Logout","login")">Logout</a>
+    </div>
+</div>
+<style>
+    .button {
+        margin: 0 5px; /* Add some horizontal margin between the buttons */
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .button:hover {
+            color: #17181a;
+            background-color: #e0e0e0;
+            background-color: #e0e0e0;
+        }
+</style>

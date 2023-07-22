@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<style>
+    .button {
+        padding: 10px 20px;
+        background-color: #17181a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .button:hover {
+            color: #17181a;
+            background-color: #fff;
+        }
+    .jumbotron .centered-content {
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: -6px;
+    }
+    .logo-icon {
+        height: 50px;
+        width: 50px;
+        margin-bottom: 6px;
+        margin-left: -7px;
+    }
+</style>
+<br/>
+<div class="jumbotron">
+    <div class="centered-content">
+        <h2><img src="~/pictures/logo(main).png" alt="Logo" class="logo-icon" />@ViewBag.Message</h2>
+    </div>
+    <br />
+    <p>
+        At Emplolist, we are committed to revolutionizing employee management systems and empowering organizations to streamline their
+        workforce management processes. Our comprehensive platform offers a wide range of features and tools designed to simplify and
+        enhance every aspect of managing employees.
+    </p>
+    @if (Session["UserId"] != null && Session["Username"].ToString() != "admin")
+    {
+        <p><a class="button" href="@Url.Action("Index1","login")">Get Started </a></p>
+
+    }
+    else if (Session["UserId"] != null && Session["Username"].ToString() == "admin")
+    {
+        <p><a class="button" href="@Url.Action("Index2","login")">Get Started </a></p>
+    }
+    else
+    {
+        <p><a class="button" href="@Url.Action("Index","login")">Get Started </a></p>
+    }
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to provide businesses of all sizes with a user-friendly and efficient employee management system that enables
+            them store their data, and foster a positive work environment.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","uc")">Learn more </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Our Objectives</h2>
+        <p>
+            Emplolist is committed to maintaining the highest standards of data security, safeguarding sensitive employee information,
+            giving organizations peace of mind when using the system.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","uc")">Learn more </a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Our Story</h2>
+        <p>
+            Inspired to make a difference, We gathered a team of four Students and embarked on a mission to create a revolutionary
+            employee management system called Emplolist.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("Index","uc")">Learn more </a></p>
+    </div>
+</div>
